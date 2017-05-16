@@ -1,6 +1,6 @@
 {
   "name": "readyjs",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "A tiny, modern, on-document-ready that runs any given function(s) once the document is ready or immediately if the document is ready already.",
   "main": "dist/ready.js",
   "config": {
