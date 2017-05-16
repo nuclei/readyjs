@@ -3,12 +3,16 @@
   "version": "1.0.2",
   "description": "A tiny, modern, on-document-ready that runs any given function(s) once the document is ready or immediately if the document is ready already.",
   "main": "dist/ready.js",
+  "config": {
+    "src": "src/ready.ts"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "standard 'src/*.js' --parser typescript-eslint-parser | snazzy && standard-readme",
+    "build": "npm run test && rollup -c && rollup -c --format=iife --output=dist/ready.iffe.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nuclei/ready.git"
+    "url": "git+https://github.com/nuclei/readyjs.git"
   },
   "keywords": [
     "dom-ready",
@@ -20,7 +24,14 @@
   "author": "Lukas Oppermann",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nuclei/ready/issues"
+    "url": "https://github.com/nuclei/readyjs/issues"
   },
-  "homepage": "https://github.com/nuclei/ready#readme"
+  "homepage": "https://github.com/nuclei/readyjs#readme",
+  "devDependencies": {
+    "rollup": "^0.41.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-typescript": "^0.8.1",
+    "typescript": "^2.3.2",
+    "typescript-eslint-parser": "^2.1.0"
+  }
 }
