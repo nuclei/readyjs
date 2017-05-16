@@ -4,11 +4,13 @@
   "description": "A tiny, modern, on-document-ready that runs any given function(s) once the document is ready or immediately if the document is ready already.",
   "main": "dist/ready.js",
   "config": {
-    "src": "src/ready.ts"
+    "src": "src/ready.ts",
+    "moduleName": "readyjs"
   },
   "scripts": {
-    "test": "standard 'src/*.js' --parser typescript-eslint-parser | snazzy && standard-readme",
-    "build": "npm run test && rollup -c && rollup -c --format=iife --output=dist/ready.iffe.js"
+    "build": "npm run test && rollup -c && rollup -c --format=iife --output=dist/$npm_package_config_moduleName.iffe.js --target=es5",
+    "build:watch": "npm run build -- -w",
+    "test": "standard 'src/*.js' --parser typescript-eslint-parser | snazzy && tsc src/*.ts --noEmit --pretty --alwaysStrict --noUnusedLocals --target ES5 --lib es6,dom && standard-readme"
   },
   "repository": {
     "type": "git",
@@ -31,6 +33,7 @@
     "rollup": "^0.41.6",
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-typescript": "^0.8.1",
+    "rollup-watch": "^3.2.2",
     "typescript": "^2.3.2",
     "typescript-eslint-parser": "^2.1.0"
   }

@@ -6,7 +6,7 @@ const pkg = require('./package')
 
 export default {
   entry: pkg.config.src,
-  moduleName: pkg.name,
+  moduleName: pkg.config.moduleName,
   dest: pkg.main,
   format: 'es',
   sourceMap: true,
@@ -16,7 +16,7 @@ export default {
       outDir: 'dist',
       rootDir: 'src',
       module: 'es6',
-      target: 'es5',
+      target: 'es6',
       declaration: false,
       removeComments: true,
       lib: [

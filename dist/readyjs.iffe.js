@@ -1,7 +1,7 @@
 (function (exports) {
 'use strict';
 
-var ready = function (fn) {
+const ready = function (fn) {
     if (document.readyState !== 'loading') {
         fn();
     }
@@ -13,4 +13,4 @@ var ready = function (fn) {
 exports.ready = ready;
 
 }((this.readyjs = this.readyjs || {})));
-//# sourceMappingURL=ready.iffe.js.map
+//# sourceMappingURL=readyjs.iffe.js.map
