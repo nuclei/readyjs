@@ -11,7 +11,7 @@ You can either use the es6 module `dist/ready.js` or include the `iffe` from `di
 
 ## API
 ```javascript
-readyjs(function(){
+readyjs.ready(function(){
     // your code here
 });
 ```
