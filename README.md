@@ -1,7 +1,9 @@
 # Readyjs
 > A tiny, modern, on-document-ready that runs any given function(s) once the document is ready or immediately if the document is ready already.
 
-## Installation
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+
+## Install
 ```
 npm install readyjs --save
 ```
@@ -17,10 +19,16 @@ import { readyjs } from '../node_modules/readyjs/dist/ready.js'
 // used readyjs
 readyjs(function(){
     // your code here
-});
+})
 
 // when using the IIFE
 readyjs.ready(function(){
     // your code here
-});
+})
 ```
+
+## Contribute
+PRs welcome.
+
+## License
+[Software License](LICENSE.md)
