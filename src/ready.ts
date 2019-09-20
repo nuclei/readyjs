@@ -1,7 +1,7 @@
 export const ready = function (fn) {
   const completed = () => {
-    document.removeEventListener('DOMContentLoaded', completed);
-    window.removeEventListener('load', completed);
+    document.removeEventListener('DOMContentLoaded', completed)
+    window.removeEventListener('load', completed)
     fn()
   }
 
@@ -11,6 +11,6 @@ export const ready = function (fn) {
     document.addEventListener('DOMContentLoaded', completed)
 
     // A fallback to window.onload, that will always work
-    window.addEventListener('load', completed);
+    window.addEventListener('load', completed)
   }
 }

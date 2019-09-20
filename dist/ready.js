@@ -1,9 +1,15 @@
 const ready = function (fn) {
-    if (document.readyState !== 'loading') {
+    const completed = () => {
+        document.removeEventListener('DOMContentLoaded', completed);
+        window.removeEventListener('load', completed);
         fn();
+    };
+    if (document.readyState !== 'loading') {
+        setTimeout(fn);
     }
     else {
-        document.addEventListener('DOMContentLoaded', fn);
+        document.addEventListener('DOMContentLoaded', completed);
+        window.addEventListener('load', completed);
     }
 };
 
